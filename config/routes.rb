@@ -8,8 +8,8 @@ Rails.application.routes.draw do
 
   get 'tasks/:id', to: 'tasks#show', as: :task_details
 
-  get 'tasks/:id/edit', to: 'tasks#edit'
-  # patch 'tasks/:id', to: 'tasks#update'
+  get 'tasks/:id/edit', to: 'tasks#edit', as: :edit_task
+  patch 'tasks/:id', to: 'tasks#update', as: :task
 
-  resources :tasks, only: :update
+  # resources :tasks, only: :update
 end

@@ -2,4 +2,7 @@
 <p>Task details: <%= @task.details %></p>
 <p>Is completed? <%= @task.completed %></p>
 
+
+<%= link_to("edit this task", edit_task_path) %>
+<br>
 <%= link_to("home", tasks_path) %>

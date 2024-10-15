@@ -1,6 +1,7 @@
 <h1>Please, complete the fields to EDIT your task: </h1>
 
 <%= form_with model: @task do |f| %>
+
   <%= f.label :title %>
   <%= f.text_field :title %>
 
@@ -10,7 +11,7 @@
   <%= f.label :completed %>
   <%= f.check_box :completed %>
 
-  <%= f.submit %>
+  <%= f.submit 'Update Task' %>
 <% end %>
 
 <h3><%= link_to "Back to homepage", tasks_path %></h3>
