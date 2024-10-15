@@ -1,15 +1,19 @@
-<h2>Task title: <%= @task.title %></h2>
-<p>Task details: <%= @task.details %></p>
-<p>Is completed? <%= @task.completed %></p>
+<div class="container mt-4">
+  <div class="card mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h2 class="mb-0">Task title: <%= @task.title %></h2>
+      <i class="fa-solid fa-thumbtack fa-lg text-primary"></i>
+    </div>
+    <div class="card-body">
+      <p class="lead">Task details: <%= @task.details %></p>
+      <p><strong>Is completed?</strong> <%= @task.completed ? "Yes" : "No" %></p>
+    </div>
+  </div>
 
-<br>
-<%= link_to "Delete",
-  task_path(@task),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
-<br>
+  <div class="d-flex justify-content-around">
+    <%= link_to "Delete", task_path(@task), class: 'btn btn-danger', data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    <%= link_to "Edit this task", edit_task_path(@task), class: 'btn btn-warning' %>
+    <%= link_to "Home", tasks_path, class: 'btn btn-success' %>
+  </div>
+</div>
 
-
-<%= link_to("edit this task", edit_task_path) %>
-<br>
-<%= link_to("home", tasks_path) %>
